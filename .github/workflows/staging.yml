@@ -1,0 +1,25 @@
+name: Deployment To Staging
+
+on:
+    push:
+        branches: 
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+            
+            - name: install dep
+              run: npm i
+
+            - name: run test
+              run: npm run test
+
+
+
+
+    # Build & push
+    # Deploy
