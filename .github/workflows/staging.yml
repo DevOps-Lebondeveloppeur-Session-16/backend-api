@@ -18,6 +18,17 @@ jobs:
             - name: run test
               run: npm run test
 
+    build-and-push:
+        runs-on: ubuntu-latest*
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+
+            - name: build docker image
+              run: docker build -t talel12/backend-session16 .
+
+            - name: list images
+              run: docker images
 
 
 
