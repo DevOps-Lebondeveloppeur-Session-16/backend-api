@@ -33,6 +33,9 @@ jobs:
               with:
                 username: ${{ vars.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
+            
+            - name: push image to dockerhub
+              run: docker push talel12/backend-session16
 
 
     # Build & push
