@@ -28,9 +28,11 @@ jobs:
             - name: build docker image
               run: docker build -t talel12/backend-session16 .
 
-            - name: list images
-              run: docker images
-
+            - name: docker login
+              uses: docker/login-action@v3
+              with:
+                username: ${{ vars.DOCKERHUB_USERNAME }}
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
 
 
     # Build & push
